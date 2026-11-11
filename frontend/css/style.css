@@ -1,0 +1,719 @@
+
+/* =================================
+   UPLYST - MAIN STYLESHEET
+   Level up. Stand out.
+================================= */
+
+/* 1. DARK MODE COLORS */
+
+:root {
+    --bg: #0B1026;
+    --surface: #171D38;
+    --surface-hover: #202849;
+    --text: #F7F7FF;
+    --muted: #A6ADC9;
+    --primary: #5425B8;
+    --secondary: #287BFF;
+    --accent: #8D5BFF;
+    --border: rgba(255,255,255,0.10);
+    --gradient: linear-gradient(120deg, #8D5BFF, #287BFF);
+    --shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+/* 2. LIGHT MODE COLORS */
+
+[data-theme="light"] {
+    --bg: #FFF5F1;
+    --surface: #FFFFFF;
+    --surface-hover: #FFF0F5;
+    --text: #30213D;
+    --muted: #806D83;
+    --primary: #A875E8;
+    --secondary: #E78BAE;
+    --accent: #C084FC;
+    --border: rgba(80,40,90,0.12);
+    --gradient: linear-gradient(120deg, #FF9EAE, #A875E8);
+    --shadow: 0 15px 45px rgba(170,100,140,0.12);
+}
+
+
+/* 3. GENERAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.35s ease, color 0.35s ease;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.section-padding {
+    padding: 100px 8%;
+}
+
+
+/* 4. NAVIGATION BAR */
+
+.navbar {
+    width: 100%;
+    min-height: 82px;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: white;
+    background: var(--gradient);
+    font-size: 21px;
+}
+
+.logo-dot {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.theme-toggle {
+    width: 39px;
+    height: 39px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+.login-btn {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.signup-btn {
+    padding: 12px 19px;
+    border-radius: 9px;
+    background: var(--gradient);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.signup-btn:hover,
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+
+/* 5. HERO SECTION */
+
+.hero {
+    min-height: 620px;
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.announcement {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--surface);
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -4px;
+}
+
+.gradient-text {
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 490px;
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 32px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 23px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: var(--gradient);
+    color: white;
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.secondary-btn:hover {
+    background: var(--surface-hover);
+}
+
+.hero-note {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.status-dot,
+.live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #36D399;
+    display: inline-block;
+}
+
+
+/* 6. HERO VISUAL */
+
+.hero-visual {
+    min-height: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.visual-glow {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0.18;
+    filter: blur(90px);
+    position: absolute;
+}
+
+.main-visual-card {
+    width: 350px;
+    min-height: 330px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+    transform: rotate(-3deg);
+    transition: 0.3s;
+}
+
+.main-visual-card:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.visual-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.visual-heading {
+    margin-top: 35px;
+}
+
+.visual-heading span {
+    font-size: 30px;
+    color: var(--secondary);
+}
+
+.visual-heading h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    margin-top: 10px;
+    letter-spacing: -1px;
+}
+
+.progress-section {
+    margin-top: 35px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.progress-info strong {
+    color: var(--secondary);
+}
+
+.progress-bar {
+    height: 8px;
+    border-radius: 20px;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 75%;
+    background: var(--gradient);
+    border-radius: 20px;
+}
+
+.visual-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.visual-tags span {
+    padding: 8px 11px;
+    background: var(--bg);
+    border-radius: 8px;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.floating-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 17px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    position: absolute;
+    z-index: 3;
+    animation: float 4s ease-in-out infinite;
+}
+
+.card-one {
+    top: 20px;
+    right: -5px;
+}
+
+.card-two {
+    bottom: 20px;
+    left: -5px;
+    animation-delay: 1s;
+}
+
+.card-icon {
+    font-size: 23px;
+}
+
+.floating-card strong,
+.floating-card small {
+    display: block;
+}
+
+.floating-card strong {
+    font-size: 12px;
+}
+
+.floating-card small {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* 7. SECTION HEADINGS */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.eyebrow {
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 43px);
+    margin-top: 15px;
+    letter-spacing: -1.5px;
+}
+
+.section-heading p {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* 8. FEATURE CARDS */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 28px 23px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--surface);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    background: var(--surface-hover);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    background: var(--bg);
+    border-radius: 14px;
+    font-size: 24px;
+    margin-bottom: 22px;
+}
+
+.feature-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 66px;
+}
+
+.feature-card a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* 9. EXPLORE SECTION */
+
+.explore {
+    margin: 30px 8% 100px;
+    padding: 65px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background: var(--surface);
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.explore h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.25;
+    margin: 18px 0;
+    letter-spacing: -1.5px;
+}
+
+.explore p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.explore-decoration span {
+    position: absolute;
+    color: var(--accent);
+    opacity: 0.5;
+    font-size: 90px;
+}
+
+.explore-decoration span:nth-child(1) {
+    top: 15px;
+    right: 90px;
+}
+
+.explore-decoration span:nth-child(2) {
+    bottom: 15px;
+    right: 220px;
+    font-size: 65px;
+}
+
+.explore-decoration span:nth-child(3) {
+    top: 100px;
+    right: 30px;
+    font-size: 45px;
+}
+
+
+/* 10. FOOTER */
+
+.footer {
+    padding: 35px 8%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer p,
+.copyright {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* 11. RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .hero {
+        gap: 20px;
+        padding: 75px 6%;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-actions {
+        gap: 10px;
+    }
+
+    .signup-btn {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 6%;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons,
+    .hero-note {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 25px;
+        min-height: 380px;
+    }
+
+    .main-visual-card {
+        width: min(330px, 90%);
+    }
+
+    .card-one {
+        right: 0;
+    }
+
+    .card-two {
+        left: 0;
+    }
+
+    .section-padding {
+        padding: 70px 6%;
+    }
+
+    .explore {
+        margin: 20px 5% 70px;
+        padding: 40px 25px;
+    }
+
+    .footer {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .login-btn {
+        font-size: 12px;
+    }
+
+    .floating-card {
+        padding: 10px;
+    }
+}
