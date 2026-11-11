@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Uplyst</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">U</span> Uplyst
+        </a>
+
+        <div class="nav-links">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="#">My Skills</a>
+            <a href="#">Opportunities</a>
+            <a href="#">Profile</a>
+        </div>
+
+        <button id="themeToggle" class="theme-toggle">☀️</button>
+    </nav>
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-welcome">
+            <div>
+                <p class="dashboard-label">YOUR PERSONAL GROWTH SPACE</p>
+                <h1>Hey, <span id="userName">Learner</span>! 👋</h1>
+                <p>Every small step takes you closer to your dream career.</p>
+            </div>
+            <a href="#" class="btn btn-primary">Explore Skills →</a>
+        </section>
+
+        <section class="dashboard-stats">
+
+            <div class="stat-card">
+                <span class="stat-icon">🎯</span>
+                <p>Skills in Progress</p>
+                <h2>03</h2>
+                <small>Keep learning!</small>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">📚</span>
+                <p>Learning Progress</p>
+                <h2>35%</h2>
+                <small>You're making progress</small>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">💼</span>
+                <p>Saved Opportunities</p>
+                <h2>05</h2>
+                <small>Explore your options</small>
+            </div>
+
+        </section>
+
+        <section class="dashboard-content">
+
+            <div class="dashboard-main">
+
+                <div class="dashboard-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Continue Learning</h2>
+                            <p>Pick up where you left off.</p>
+                        </div>
+                        <a href="#">View all →</a>
+                    </div>
+
+                    <div class="learning-item">
+                        <div class="learning-icon">💻</div>
+                        <div class="learning-info">
+                            <h3>Web Development</h3>
+                            <p>HTML, CSS and JavaScript</p>
+                            <div class="progress-bar">
+                                <div style="width: 65%"></div>
+                            </div>
+                            <small>65% completed</small>
+                        </div>
+                    </div>
+
+                    <div class="learning-item">
+                        <div class="learning-icon">🐍</div>
+                        <div class="learning-info">
+                            <h3>Python Programming</h3>
+                            <p>Programming fundamentals</p>
+                            <div class="progress-bar">
+                                <div style="width: 40%"></div>
+                            </div>
+                            <small>40% completed</small>
+                        </div>
+                    </div>
+
+                    <div class="learning-item">
+                        <div class="learning-icon">📊</div>
+                        <div class="learning-info">
+                            <h3>Data Structures</h3>
+                            <p>Arrays, stacks and queues</p>
+                            <div class="progress-bar">
+                                <div style="width: 20%"></div>
+                            </div>
+                            <small>20% completed</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Recommended for You</h2>
+                            <p>Opportunities to explore.</p>
+                        </div>
+                        <a href="#">Explore all →</a>
+                    </div>
+
+                    <div class="opportunity-item">
+                        <div>
+                            <h3>Frontend Development Intern</h3>
+                            <p>Beginner friendly · Remote</p>
+                        </div>
+                        <span class="opportunity-tag">Internship</span>
+                    </div>
+
+                    <div class="opportunity-item">
+                        <div>
+                            <h3>Digital Marketing Intern</h3>
+                            <p>Beginner friendly · Hybrid</p>
+                        </div>
+                        <span class="opportunity-tag">Internship</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <aside class="dashboard-sidebar">
+
+                <div class="dashboard-card">
+                    <h2>Weekly Goal 🌟</h2>
+                    <p>Complete 5 learning sessions this week.</p>
+
+                    <div class="goal-progress">
+                        <div class="goal-circle">
+                            <span>3/5</span>
+                        </div>
+                    </div>
+
+                    <p class="goal-caption">You're doing great!</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Quick Actions</h2>
+                    <a href="#" class="quick-action">➕ Add a new skill</a>
+                    <a href="#" class="quick-action">📝 Take skill assessment</a>
+                    <a href="#" class="quick-action">🔍 Find internships</a>
+                    <a href="#" class="quick-action">👤 Edit profile</a>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,40 +1,53 @@
 
 // =================================
-// UPLYST - THEME SWITCHER
+// UPLYST - GLOBAL APP SETTINGS
 // =================================
 
-// Get the theme button
+// THEME SWITCHER
+
 const themeToggle = document.getElementById("themeToggle");
 
-// Get the saved theme from browser storage
 let currentTheme = localStorage.getItem("uplyst-theme") || "dark";
 
-// Apply the theme
 function applyTheme(theme) {
-
     document.documentElement.setAttribute("data-theme", theme);
 
-    // Update button icon
-    if (theme === "dark") {
-        themeToggle.textContent = "☀️";
-        themeToggle.setAttribute("aria-label", "Switch to light mode");
-    } else {
-        themeToggle.textContent = "🌙";
-        themeToggle.setAttribute("aria-label", "Switch to dark mode");
+    if (themeToggle) {
+        themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+
+        themeToggle.setAttribute(
+            "aria-label",
+            theme === "dark"
+                ? "Switch to light mode"
+                : "Switch to dark mode"
+        );
     }
 
-    // Save user's preference
     localStorage.setItem("uplyst-theme", theme);
 }
 
-// Apply saved theme when page opens
+// Apply saved theme
 applyTheme(currentTheme);
 
-// Switch theme when button is clicked
-themeToggle.addEventListener("click", function () {
+// Theme button click
+if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+        currentTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(currentTheme);
+    });
+}
 
-    currentTheme = currentTheme === "dark" ? "light" : "dark";
 
-    applyTheme(currentTheme);
+// =================================
+// DASHBOARD USER GREETING
+// =================================
 
-});
+const userNameElement = document.getElementById("userName");
+
+if (userNameElement) {
+    const savedName = localStorage.getItem("uplyst-user-name");
+
+    if (savedName) {
+        userNameElement.textContent = savedName;
+    }
+}
